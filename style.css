@@ -1,0 +1,212 @@
+.top-header {
+  position: fixed;
+  color: rgb(137, 90, 3);
+  background-color: pink;
+  width: 100%;
+  height: 5.625rem;
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+  padding: 0 1.25rem;
+}
+
+.Menu-Horizontal {
+  list-style: none;
+  display: flex;
+  justify-content: space-round;
+  width: 100%;
+  max-width: 75rem;
+}
+
+.Menu-Horizontal  li{
+  display: block;
+  padding: 0.938rem 1.25rem;
+  color: green;
+}
+
+.Menu-Horizontal li:hover{
+  color: blue;
+}
+
+.Menu-Horizontal li a:hover{
+  color : black;
+}
+.Menu-Horizontal li a{
+  text-decoration: none;
+}
+
+.Menu-Vertical {
+  padding: 0;
+  position: absolute;
+  display: none;
+  width: 12.5rem;
+  background-color: skyblue;
+}
+
+.Menu-Horizontal li:hover .Menu-Vertical{
+  display: block; 
+}
+
+.Menu-Vertical li:hover{
+  background-color: rgb(240, 241, 242);
+
+}
+
+
+.Menu-Vertical li{
+  display: block;
+  color: rgb(59, 58, 58);
+  padding: 0.938rem 0.938rem 0.938rem 1.25rem;
+  
+}
+
+.seccion-productos{
+  padding: 3.75rem 1.25rem;
+  background-color:rgb(152, 152, 152)
+}
+
+/* Estilos sencillos para la sección Recetas */
+.seccion-Recetas{
+  padding: 2.5rem 1.25rem;
+  background: #fff;
+}
+.seccion-Recetas h2{
+  max-width: 75rem;
+  margin: 0 auto 1.125rem auto;
+  color: #333;
+}
+.recetas-list{
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.125rem;
+}
+.receta-card{
+  background: #f8f8f8;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+.receta-card img{
+  width: 100%;
+  height: 9.375rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+}
+.receta-info h3{
+  margin: 0 0 0.375rem 0;
+  font-size: 1.05rem;
+}
+.receta-info p{
+  margin: 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Sección Comunidad: fondo resaltado y tarjetas */
+.seccion-comunidad{
+  padding: 2.5rem 1.25remx;
+  background: #fff7e6; /* color suave para destacar la sección */
+}
+.seccion-comunidad h2{
+  max-width: 75rem;
+  margin: 0 auto 0.5rem auto;
+  color: #b35b00;
+}
+.seccion-comunidad .lead{
+  max-width: 75rem;
+  margin: 0 auto 0.938rem auto;
+  color: #5b5b5b;
+}
+.comunidad-media{
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0 1.25rem 0;
+}
+.comunidad-img{
+  width: 100%;
+  max-width: 56.25rem;
+  border-radius: 0.625rem;
+  object-fit: cover;
+}
+
+.testimonios{
+  max-width: 56.25rem;
+  margin: 1.125rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.875rem;
+}
+.testimonio{
+  background: #fff;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.375rem 0.875rem rgba(0,0,0,0.06);
+}
+.testimonio p{ margin: 0 0 0.5rem 0; color: #333; }
+.testimonio footer{ font-size: 0.9rem; color: #777; }
+
+@media (max-width: 800px){
+  .recetas-list{ grid-template-columns: repeat(2,1fr); }
+  .testimonios{ grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 480px){
+  .recetas-list{ grid-template-columns: 1fr; }
+}
+
+/* Estilos sección contacto */
+.seccion-contacto{
+  padding: 2.5rem 1.25rem;
+  background: #fff;
+}
+.cont-grl-contacto{ max-width: 43.75rem; margin: 0 auto; }
+.contact-form{ display: flex; flex-direction: column; gap: 0.625rem; }
+.contact-form input,
+.contact-form textarea{ padding: 0.625rem; border: 0.063rem solid #ddd; border-radius: 0.375rem; }
+.btn-enviar{ background: #ff7f11; color: #fff; border: none; padding: 1.0rem 0.875rem; border-radius: 0.375rem; cursor: pointer; }
+
+/* Base */
+ 
+
+.cont-gral-Inicio{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+
+.cont-ini-imagen{
+  padding: 6.25rem 1.25rem;
+  flex: 1;
+  height: 200%;
+  text-align: center;
+}
+
+.cont-ini-imagen img{
+  width: 100%;
+  max-width: 312.5rem;
+  border-radius: 0.625rem;
+}
+
+
+.cont-Inicio-texto{
+  flex: 1;
+}
+
+.cont-Inicio-texto h2{
+  color: rgb(219, 154, 34);
+  margin-bottom: 0.938rem;
+}
+
+.cont-Inicio-texto p{
+  color: black;
+  line-height: 1.3;
+}

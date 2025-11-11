@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Proyecto</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Pie.css" />
+  </head>
+  <body>
+    <nav class="top-header">
+      <a href="" class="logo">
+        <img height ="80" width ="80" src="imagenes/logotico.png" alt=""/>
+    </a>
+      <h1>QuickBites</h1>
+      <ul class="Menu-Horizontal">
+        <li><a href="">Inicio</a></li>
+        <li><a href="">
+          Recetas
+          <ol class="Menu-Vertical">
+            <li><a href="">Frutas y Verduras</a></li>
+            <li><a href="">Granos Integrales</a></li>
+            <li><a href="">Proteinas Magras</a></li>
+            <li><a href="">Lacteos</a></li>
+          </a></ol>
+        </li>
+        <li><a href="">Comunidad</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section class="seccion-productos">
+      <div class="cont-gral-Inicio">
+
+
+        <div class="cont-ini-imagen">
+          <img  src="imagenes/comunidad.jpeg" alt=""/>
+        </div>
+
+        <div class="cont-Inicio-texto">
+          <h2> Seccion Inicio</h2>
+          <p> Les presentamos la innovacion de QuickBites. Una aplicacion donde puedes guardar tu comida, buscar recetas de otras personas de nuestra ccomunidad.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <section id="recetas" class="seccion-Recetas">
+        <div class="cont-grl-recetas">
+          <h2>Recetas</h2>
+          <div class="recetas-list">
+            <article class="receta-card">
+              <img src="imagenes/tacos (1).png" alt="Tacos saludables" />
+              <div class="receta-info">
+                <h3>Tacos saludables</h3>
+                <p>Un taco es un platillo mexicano tradicional que consiste en una tortilla rellena y aderezada. Rápido y delicioso.</p>
+              </div>
+            </article>
+
+            <article class="receta-card">
+              <img src="imagenes/comunidad.jpeg" alt="Ensalada rápida" />
+              <div class="receta-info">
+                <h3>Ensalada rápida</h3>
+                <p>Mezcla de hojas verdes, tomate cherry y vinagreta de limón. Fresca y ligera.</p>
+              </div>
+            </article>
+
+            <article class="receta-card">
+              <img src="imagenes/logotico.png" alt="Avocado toast" />
+              <div class="receta-info">
+                <h3>Avocado Toast</h3>
+                <p>Tostada de pan integral con aguacate y semillas. Perfecta para el desayuno.</p>
+              </div>
+            </article>
+
+            <article class="receta-card">
+              <img src="imagenes/comunidad.jpeg" alt="Berry Smoothie" />
+              <div class="receta-info">
+                <h3>Berry Smoothie</h3>
+                <p>Batido de frutos rojos con yogur. Refrescante y nutritivo.</p>
+              </div>
+            </article>
+
+            <article class="receta-card">
+              <img src="imagenes/tacos (1).png" alt="Quinoa Salad" />
+              <div class="receta-info">
+                <h3>Quinoa Salad</h3>
+                <p>Ensalada de quinoa con verduras asadas y aderezo cítrico.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+    </section>
+
+    <section id="comunidad" class="seccion-comunidad">
+      <div class="cont-grl-comunidad">
+        <h2>Comunidad</h2>
+        <p class="lead">La comunidad comparte recetas, consejos y apoyo — aquí algunas opiniones reales de usuarios.</p>
+
+        <div class="comunidad-media">
+          <img src="imagenes/comunidad.jpeg" alt="Comunidad QuickBites" class="comunidad-img" />
+        </div>
+
+        <div class="testimonios">
+          <blockquote class="testimonio">
+            <p>"QuickBites me ayudó a organizar mis recetas; encontré ideas saludables y una comunidad muy amable."</p>
+            <footer>— Laura, usuaria</footer>
+          </blockquote>
+
+          <blockquote class="testimonio">
+            <p>"Me encanta la variedad de recetas y los comentarios útiles. Es una comunidad real y colaborativa."</p>
+            <footer>— Diego, cocinero aficionado</footer>
+          </blockquote>
+
+          <blockquote class="testimonio">
+            <p>"Fácil de usar y con recetas que realmente funcionan. Recomendada para quienes quieren comer mejor."</p>
+            <footer>— Ana, estudiante</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Contacto (sencilla) -->
+    <section id="contacto" class="seccion-contacto">
+      <div class="cont-grl-contacto">
+        <h2>Contacto</h2>
+        <p class="lead">¿Tienes una duda o quieres colaborar? Escríbenos.</p>
+        <form class="contact-form">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" placeholder="tucorreo@ejemplo.com" />
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </div>
+    </section>
+    <!-- Enlaces legales -->
+     <section class="seccion-pie">
+         <footer class="footer-container">
+          <div class="footer-links">
+            <h4>Legal</h4>
+              <a href="documentos/obtenerDocumento.pdf" target="_blank">  Política de Privacidad</a>
+              <!-- Dentro de href llama a un documento pdf con la poltica-->
+              <a href="documentos/Terminos-y-Condiciones-de-Venta.pdf" target="_blank">  Términos y Condiciones</a>
+              <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
+              <a href="documentos/obtenerDocumento.pdf" target="_blank">  Protección de Datos</a>
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145812.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+                alt="LinkedIn"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145806.png"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+          </div>
+        </div>
+    </footer>
+    </section>
+  </body>
+</html>
