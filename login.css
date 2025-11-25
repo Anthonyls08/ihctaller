@@ -1,73 +1,49 @@
-/* --- CORRECCIÓN IMPORTANTE: EL RESET --- */
-/* Esto evita que el padding haga que los cuadros se salgan de la pantalla */
+/* --- CORRECCIÓN 1: EL RESET GLOBAL --- */
+/* Esto es obligatorio. Le dice al navegador que el borde y el relleno
+   se incluyan DENTRO del tamaño total y no se sumen aparte. */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fffbf2; /* Tu fondo crema */
+    background-color: #fffbf2;
+    /* Evita que aparezca barra de scroll horizontal */
+    overflow-x: hidden; 
 }
 
-/* Contenedor principal */
+/* --- CORRECCIÓN 2: EL CONTENEDOR --- */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
-    padding: 20px; /* Espacio alrededor para que no se pegue al borde en móviles */
+    /* Quitamos width: 100% explícito para evitar sumas con el padding. 
+       Un div ya ocupa el 100% por defecto. */
+    width: auto; 
+    padding: 20px; /* Margen de seguridad alrededor */
 }
 
-/* La caja del formulario */
+/* --- LA CAJA DEL FORMULARIO --- */
 .login-box {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    width: 100%;
-    max-width: 400px; /* Ancho máximo para escritorio */
+    
+    /* Control de anchos */
+    width: 100%; 
+    max-width: 400px; /* En PC no pasará de 400px */
+    
     text-align: center;
 }
 
-/* Estilos de los Inputs (Correo y Contraseña) */
-.input-group {
-    margin-bottom: 1rem;
-    text-align: left;
-    width: 100%; /* Asegura que ocupe el espacio disponible */
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.input-group input {
-    width: 100%; /* Ocupa el 100% del padre, pero gracias al box-sizing no se sale */
-    padding: 12px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #fafafa;
-    transition: border-color 0.3s;
-    font-family: inherit;
-}
-
-.input-group input:focus {
-    border-color: #ff7f11;
-    background-color: #fff;
-    outline: none;
-}
-
-/* Resto de elementos (Botones, logo, etc.) */
 .login-logo {
     width: 70px;
     margin-bottom: 1rem;
+    max-width: 100%; /* Imagen responsive */
 }
 
 .login-box h2 {
@@ -82,14 +58,64 @@ body {
     font-size: 0.95rem;
 }
 
+/* --- CORRECCIÓN 3: LOS INPUTS (El problema principal) --- */
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    /* Aseguramos que nunca exceda el ancho de su padre */
+    width: 100%;
+    max-width: 100%; 
+    
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus {
+    border-color: #ff7f11;
+    background-color: #fff;
+    outline: none;
+}
+
+/* --- BOTONES Y ENLACES --- */
 .form-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap; /* Permite que bajen si la pantalla es muy pequeña */
+    flex-wrap: wrap; /* Si no caben, bajan de línea */
     gap: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #ff7f11;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .login-button {
@@ -105,24 +131,45 @@ body {
     box-shadow: 0 4px 15px rgba(255, 127, 17, 0.3);
 }
 
-/* --- MEDIA QUERY PARA MÓVILES (Celulares) --- */
-@media (max-width: 480px) {
-    .login-container {
-        align-items: flex-start; /* Mueve el formulario un poco hacia arriba */
-        padding: 15px; /* Pequeño margen para que no toque los bordes de la pantalla */
-        background-color: white; /* En móvil a veces se ve mejor fondo blanco entero */
-    }
-
-    .login-box {
-        padding: 1.5rem;
-        box-shadow: none; /* Quitamos sombra en móvil para diseño más plano */
-        margin-top: 2rem;
-        max-width: 100%; /* Asegura que use todo el ancho posible */
-    }
-
-    /* Ajuste para que los inputs no se sientan pequeños en dedos grandes */
-    .input-group input {
-        padding: 15px; 
-        font-size: 16px; /* Evita que el iPhone haga zoom al escribir */
-    }
+.divider {
+    margin: 1.5rem 0;
+    position: relative;
+    text-align: center;
 }
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 0; width: 100%; height: 1px;
+    background: #eee; z-index: 1;
+}
+.divider span {
+    background: white; padding: 0 10px; color: #999;
+    font-size: 0.85rem; position: relative; z-index: 2;
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    background: white;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+.register-link {
+    font-size: 0.9rem;
+    color: #666;
+}
+.register-link a { color: #ff7f11; font-weight: 700; text-decoration: none; }
+
+/* --- RESPONSIVE ESPECÍFICO PARA MÓVILES --- */
+@media (max-width: 480px) {
