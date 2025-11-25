@@ -1,212 +1,349 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+  --primary-color: #ff7f11; /* Tu naranja de marca */
+  --primary-hover: #e06b00;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-color: #fffbf2; /* Crema muy suave para fondo general */
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  padding-top: 5.625rem; /* Espacio para el header fijo */
+}
+
+/* --- HEADER / NAVEGACIÓN --- */
 .top-header {
   position: fixed;
-  color: rgb(137, 90, 3);
-  background-color: pink;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 5.625rem;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  
   justify-content: space-between;
-  padding: 0 1.25rem;
+  padding: 0 5%;
+  z-index: 1000;
+}
+
+.top-header h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.logo img {
+  height: 60px; /* Ajuste de tamaño */
+  width: auto;
 }
 
 .Menu-Horizontal {
   list-style: none;
   display: flex;
-  justify-content: space-round;
-  width: 100%;
-  max-width: 75rem;
+  gap: 2rem;
 }
 
-.Menu-Horizontal  li{
-  display: block;
-  padding: 0.938rem 1.25rem;
-  color: green;
-}
-
-.Menu-Horizontal li:hover{
-  color: blue;
-}
-
-.Menu-Horizontal li a:hover{
-  color : black;
-}
-.Menu-Horizontal li a{
+.Menu-Horizontal li a {
   text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
+.Menu-Horizontal li a:hover {
+  color: var(--primary-color);
+}
+
+/* Submenú */
 .Menu-Vertical {
-  padding: 0;
   position: absolute;
   display: none;
-  width: 12.5rem;
-  background-color: skyblue;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 160px;
 }
 
-.Menu-Horizontal li:hover .Menu-Vertical{
-  display: block; 
-}
-
-.Menu-Vertical li:hover{
-  background-color: rgb(240, 241, 242);
-
-}
-
-
-.Menu-Vertical li{
+.Menu-Horizontal li:hover .Menu-Vertical {
   display: block;
-  color: rgb(59, 58, 58);
-  padding: 0.938rem 0.938rem 0.938rem 1.25rem;
-  
 }
 
-.seccion-productos{
-  padding: 3.75rem 1.25rem;
-  background-color:rgb(152, 152, 152)
+.Menu-Vertical li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
 }
 
-/* Estilos sencillos para la sección Recetas */
-.seccion-Recetas{
-  padding: 2.5rem 1.25rem;
-  background: #fff;
+.Menu-Vertical li a:hover {
+  background-color: #f9f9f9;
+  color: var(--primary-color);
 }
-.seccion-Recetas h2{
-  max-width: 75rem;
-  margin: 0 auto 1.125rem auto;
-  color: #333;
+
+/* --- SECCIÓN HERO (INICIO) --- */
+.seccion-productos {
+  padding: 4rem 5%;
+  background-color: var(--bg-color); /* Fondo crema, adiós al gris */
 }
-.recetas-list{
-  max-width: 75rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.125rem;
-}
-.receta-card{
-  background: #f8f8f8;
-  padding: 0.625rem;
-  border-radius: 0.375rem;
-  overflow: hidden;
+
+.cont-gral-Inicio {
   display: flex;
-  flex-direction: column;
-  gap: 0.0625rem;
-}
-.receta-card img{
-  width: 100%;
-  height: 9.375rem;
-  object-fit: cover;
-  border-radius: 0.375rem;
-}
-.receta-info h3{
-  margin: 0 0 0.375rem 0;
-  font-size: 1.05rem;
-}
-.receta-info p{
-  margin: 0;
-  color: #444;
-  font-size: 0.95rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
 }
 
-/* Sección Comunidad: fondo resaltado y tarjetas */
-.seccion-comunidad{
-  padding: 2.5rem 1.25remx;
-  background: #fff7e6; /* color suave para destacar la sección */
+/* Texto del Hero */
+.cont-Inicio-texto {
+  flex: 1;
 }
-.seccion-comunidad h2{
-  max-width: 75rem;
-  margin: 0 auto 0.5rem auto;
-  color: #b35b00;
+
+.cont-Inicio-texto h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
 }
-.seccion-comunidad .lead{
-  max-width: 75rem;
-  margin: 0 auto 0.938rem auto;
-  color: #5b5b5b;
+
+.cont-Inicio-texto p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
-.comunidad-media{
+
+/* Botón llamativo */
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 127, 17, 0.3);
+}
+
+.btn-hero:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+}
+
+/* Imagen del Hero */
+.cont-ini-imagen {
+  flex: 1;
   display: flex;
   justify-content: center;
-  margin: 0.75rem 0 1.25rem 0;
 }
-.comunidad-img{
+
+.cont-ini-imagen img {
   width: 100%;
-  max-width: 56.25rem;
-  border-radius: 0.625rem;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  /* Arreglo para que la imagen no se estire raro */
+  object-fit: cover; 
+}
+
+/* --- SECCIÓN RECETAS --- */
+.seccion-Recetas {
+  padding: 4rem 5%;
+  background: var(--white);
+}
+
+.cont-grl-recetas h2, 
+.seccion-comunidad h2, 
+.cont-grl-contacto h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.recetas-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive automático */
+  gap: 2rem;
+}
+
+.receta-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.receta-card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+}
+
+.receta-card img {
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
-.testimonios{
-  max-width: 56.25rem;
-  margin: 1.125rem auto 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.875rem;
-}
-.testimonio{
-  background: #fff;
-  padding: 0.75rem 0.875rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.375rem 0.875rem rgba(0,0,0,0.06);
-}
-.testimonio p{ margin: 0 0 0.5rem 0; color: #333; }
-.testimonio footer{ font-size: 0.9rem; color: #777; }
-
-@media (max-width: 800px){
-  .recetas-list{ grid-template-columns: repeat(2,1fr); }
-  .testimonios{ grid-template-columns: repeat(2,1fr); }
+.receta-info {
+  padding: 1.5rem;
 }
 
-@media (max-width: 480px){
-  .recetas-list{ grid-template-columns: 1fr; }
+.receta-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
 }
 
-/* Estilos sección contacto */
-.seccion-contacto{
-  padding: 2.5rem 1.25rem;
-  background: #fff;
-}
-.cont-grl-contacto{ max-width: 43.75rem; margin: 0 auto; }
-.contact-form{ display: flex; flex-direction: column; gap: 0.625rem; }
-.contact-form input,
-.contact-form textarea{ padding: 0.625rem; border: 0.063rem solid #ddd; border-radius: 0.375rem; }
-.btn-enviar{ background: #ff7f11; color: #fff; border: none; padding: 1.0rem 0.875rem; border-radius: 0.375rem; cursor: pointer; }
-
-/* Base */
- 
-
-.cont-gral-Inicio{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 75rem;
-  margin: 0 auto;
-  gap: 2.5rem;
+.receta-info p {
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
 
-.cont-ini-imagen{
-  padding: 6.25rem 1.25rem;
-  flex: 1;
-  height: 200%;
+/* --- SECCIÓN COMUNIDAD --- */
+.seccion-comunidad {
+  padding: 4rem 5%;
+  background-color: #fff7e6; /* Fondo destacado suave */
   text-align: center;
 }
 
-.cont-ini-imagen img{
+.comunidad-img {
   width: 100%;
-  max-width: 312.5rem;
-  border-radius: 0.625rem;
+  max-width: 800px;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow);
 }
 
-
-.cont-Inicio-texto{
-  flex: 1;
+.testimonios {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.cont-Inicio-texto h2{
-  color: rgb(219, 154, 34);
-  margin-bottom: 0.938rem;
+.testimonio {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  position: relative;
 }
 
-.cont-Inicio-texto p{
-  color: black;
-  line-height: 1.3;
+/* Detalle visual: comillas */
+.testimonio::before {
+  content: "“";
+  font-size: 4rem;
+  color: var(--primary-color);
+  opacity: 0.2;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+}
+
+.testimonio p {
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.testimonio footer {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* --- SECCIÓN CONTACTO --- */
+.seccion-contacto {
+  padding: 4rem 5%;
+  background: var(--white);
+}
+
+.cont-grl-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cont-grl-contacto .lead {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.btn-enviar {
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-enviar:hover {
+  background: var(--primary-hover);
+}
+
+/* --- RESPONSIVE PARA MÓVILES --- */
+@media (max-width: 768px) {
+  .cont-gral-Inicio {
+    flex-direction: column-reverse; /* Imagen arriba, texto abajo en móviles */
+    text-align: center;
+  }
+
+  .cont-Inicio-texto h2 {
+    font-size: 2rem;
+  }
+  
+  .Menu-Horizontal {
+    display: none; /* Aquí podrías implementar un menú hamburguesa más adelante */
+  }
 }
