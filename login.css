@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+/* 1. IMPORTAMOS LA FUENTE NUEVA (Debe ir en la primera línea) */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad+Guides&display=swap');
+
+/* --- RESET BÁSICO --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,43 +9,46 @@
 }
 
 body {
-    font-family: "Science Gothic";
+    /* 2. APLICAMOS LA FUENTE A TODO EL CUERPO */
+    font-family: "Playwrite US Trad Guides", cursive;
     background-color: #fffbf2;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
-
+/* --- EL CONTENEDOR PRINCIPAL --- */
 .login-container {
     display: flex;
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100vh;       
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    padding: 20px;          
+    padding: 20px;
 }
 
-
+/* --- LA TARJETA (LOGIN BOX) --- */
 .login-box {
     background: white;
-    padding: 2.5rem;         
-    border-radius: 20px;     
+    padding: 2.5rem;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    width: 100%;             
-    max-width: 400px;       
+    width: 100%;
+    max-width: 400px; /* Mantiene el ancho controlado */
     text-align: center;
-    margin: 0 auto;          
+    margin: 0 auto;
 }
 
+/* --- ELEMENTOS INTERNOS --- */
 .login-logo {
     width: 80px;
     margin-bottom: 1rem;
 }
 
 .login-box h2 {
-    font-family: "Science Gothic";
     margin: 0 0 0.5rem 0;
     color: #333;
     font-size: 1.8rem;
+    /* Opcional: Si quieres que el título resalte más con esta fuente */
+    font-weight: normal; 
 }
 
 .login-subtitle {
@@ -65,7 +71,7 @@ body {
     font-size: 0.9rem;
 }
 
-
+/* Inputs */
 .input-group input {
     width: 100%;
     padding: 12px;
@@ -74,7 +80,9 @@ body {
     font-size: 1rem;
     background-color: #fafafa;
     transition: border-color 0.3s;
-    font-family: inherit;
+    
+    /* Importante: Hereda la fuente "Playwrite" para lo que escribas */
+    font-family: inherit; 
 }
 
 .input-group input:focus {
@@ -83,6 +91,7 @@ body {
     outline: none;
 }
 
+/* Botones y enlaces */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -114,10 +123,11 @@ body {
     background-color: #ff7f11;
     color: white;
     font-size: 1rem;
-    font-weight: 600;
+    /* La fuente puede necesitar un ajuste de peso aquí */
+    font-weight: bold; 
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(255, 127, 17, 0.3);
-    transition: transform 0.2s;
+    font-family: inherit; /* Asegura que el botón use la fuente */
 }
 
 .login-button:hover {
@@ -140,20 +150,19 @@ body {
     display: flex; gap: 10px; margin-bottom: 2rem;
 }
 .social-btn {
-    flex: 1; padding: 10px; border: 2px solid #eee; border-radius: 8px; background: white; font-weight: 600; color: #555; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+    flex: 1; padding: 10px; border: 2px solid #eee; border-radius: 8px; background: white; font-weight: 600; color: #555; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit;
 }
 
 .register-link { font-size: 0.9rem; color: #666; }
 .register-link a { color: #ff7f11; font-weight: 700; text-decoration: none; }
 
-
+/* --- RESPONSIVE (MÓVIL) --- */
 @media (max-width: 480px) {
     .login-container {
         padding: 15px; 
     }
 
     .login-box {
-
         padding: 2rem 1.5rem; 
         width: 100%;
         border-radius: 15px;
@@ -169,5 +178,3 @@ body {
         gap: 15px;
     }
 }
-
-
