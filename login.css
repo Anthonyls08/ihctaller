@@ -1,4 +1,4 @@
-/* --- RESET BÁSICO (Obligatorio para que no se descuadre) --- */
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,37 +6,33 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fffbf2; /* Fondo crema */
-    min-height: 100vh; /* Asegura que el fondo cubra todo */
+    font-family: "Science Gothic",
+    background-color: #fffbf2;
+    min-height: 100vh; 
 }
 
-/* --- EL CONTENEDOR PRINCIPAL (El fondo de toda la pantalla) --- */
+
 .login-container {
     display: flex;
-    justify-content: center; /* Centrado Horizontal */
-    align-items: center;     /* Centrado Vertical */
-    min-height: 100vh;       /* Altura mínima de toda la pantalla */
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
     width: 100%;
-    padding: 20px;           /* Margen de seguridad para que no toque los bordes */
+    padding: 20px;          
 }
 
-/* --- LA TARJETA (El cuadro blanco) --- */
+
 .login-box {
     background: white;
-    padding: 2.5rem;         /* Relleno interno cómodo */
-    border-radius: 20px;     /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave */
-    
-    /* ESTO ES LO QUE LO CUADRA: */
-    width: 100%;             /* Intenta ocupar todo el ancho disponible... */
-    max-width: 400px;        /* ...pero detente en 400px (tamaño ideal) */
-    
+    padding: 2.5rem;         
+    border-radius: 20px;     
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;             
+    max-width: 400px;       
     text-align: center;
-    margin: 0 auto;          /* Asegura centrado extra */
+    margin: 0 auto;          
 }
 
-/* --- ELEMENTOS INTERNOS (Inputs, botones, etc.) --- */
 .login-logo {
     width: 80px;
     margin-bottom: 1rem;
@@ -68,7 +64,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* El arreglo de los inputs que ya funcionó */
+
 .input-group input {
     width: 100%;
     padding: 12px;
@@ -149,22 +145,16 @@ body {
 .register-link { font-size: 0.9rem; color: #666; }
 .register-link a { color: #ff7f11; font-weight: 700; text-decoration: none; }
 
-/* --- RESPONSIVE (MÓVIL) - CORREGIDO PARA QUE NO SE DESCUADRE --- */
+
 @media (max-width: 480px) {
-    /* Mantenemos el centrado pero reducimos el espacio lateral */
     .login-container {
         padding: 15px; 
-        /* align-items: center; <--- MANTENEMOS ESTO para que esté centrado verticalmente */
     }
 
     .login-box {
-        /* Reducimos un poco el relleno interno para que quepa más contenido */
+
         padding: 2rem 1.5rem; 
-        
-        /* Aseguramos que no se pegue a los bordes */
         width: 100%;
-        
-        /* Mantenemos la sombra y borde para que se vea como tarjeta */
         border-radius: 15px;
     }
     
@@ -178,3 +168,4 @@ body {
         gap: 15px;
     }
 }
+
