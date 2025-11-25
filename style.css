@@ -1,10 +1,10 @@
-/* --- CONFIGURACIÓN GENERAL --- */
+
 :root {
-  --primary-color: #ff7f11; /* Tu naranja de marca */
+  --primary-color: #ff7f11; 
   --primary-hover: #e06b00;
   --text-dark: #333333;
   --text-light: #666666;
-  --bg-color: #fffbf2; /* Crema muy suave para fondo general */
+  --bg-color: #fffbf2;
   --white: #ffffff;
   --shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
@@ -16,13 +16,12 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-family: 'Poppins', sans-serif; 
   background-color: var(--bg-color);
   color: var(--text-dark);
-  padding-top: 5.625rem; /* Espacio para el header fijo */
+  padding-top: 5.625rem; 
 }
 
-/* --- HEADER / NAVEGACIÓN --- */
 .top-header {
   position: fixed;
   top: 0;
@@ -46,7 +45,7 @@ body {
 }
 
 .logo img {
-  height: 60px; /* Ajuste de tamaño */
+  height: 60px; 
   width: auto;
 }
 
@@ -67,7 +66,7 @@ body {
   color: var(--primary-color);
 }
 
-/* Submenú */
+
 .Menu-Vertical {
   position: absolute;
   display: none;
@@ -93,10 +92,10 @@ body {
   color: var(--primary-color);
 }
 
-/* --- SECCIÓN HERO (INICIO) --- */
+
 .seccion-productos {
   padding: 4rem 5%;
-  background-color: var(--bg-color); /* Fondo crema, adiós al gris */
+  background-color: var(--bg-color); 
 }
 
 .cont-gral-Inicio {
@@ -127,7 +126,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Botón llamativo */
+
 .btn-hero {
   display: inline-block;
   background-color: var(--primary-color);
@@ -157,11 +156,9 @@ body {
   max-width: 500px;
   border-radius: 20px;
   box-shadow: var(--shadow);
-  /* Arreglo para que la imagen no se estire raro */
   object-fit: cover; 
 }
 
-/* --- SECCIÓN RECETAS --- */
 .seccion-Recetas {
   padding: 4rem 5%;
   background: var(--white);
@@ -180,7 +177,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive automático */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -194,7 +191,7 @@ body {
 }
 
 .receta-card:hover {
-  transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+  transform: translateY(-10px); 
 }
 
 .receta-card img {
@@ -218,10 +215,10 @@ body {
   color: var(--text-light);
 }
 
-/* --- SECCIÓN COMUNIDAD --- */
+
 .seccion-comunidad {
   padding: 4rem 5%;
-  background-color: #fff7e6; /* Fondo destacado suave */
+  background-color: #fff7e6; 
   text-align: center;
 }
 
@@ -249,7 +246,7 @@ body {
   position: relative;
 }
 
-/* Detalle visual: comillas */
+
 .testimonio::before {
   content: "“";
   font-size: 4rem;
@@ -271,7 +268,7 @@ body {
   color: var(--primary-color);
 }
 
-/* --- SECCIÓN CONTACTO --- */
+
 .seccion-contacto {
   padding: 4rem 5%;
   background: var(--white);
@@ -288,7 +285,7 @@ body {
   color: var(--text-light);
 }
 
-/* --- ESTILOS DEL BOTÓN HAMBURGUESA (Por defecto oculto en PC) --- */
+
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -299,40 +296,39 @@ body {
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--primary-color); /* Tu naranja */
+    background-color: var(--primary-color); 
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-/* --- MEDIA QUERY: ESTILOS PARA MÓVIL (Max 768px) --- */
+
 @media (max-width: 768px) {
     
-    /* 1. Mostrar el botón de hamburguesa */
+
     .menu-toggle {
         display: flex; 
     }
 
-    /* 2. Ocultar el título H1 en móvil si quita mucho espacio (Opcional) */
     .top-header h1 {
         font-size: 1.2rem; /* Más pequeño */
     }
 
-    /* 3. Transformar el menú horizontal en vertical y ocultarlo */
+
     .Menu-Horizontal {
-        display: none; /* Oculto por defecto */
+        display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 5.625rem; /* Justo debajo del header */
+        top: 5.625rem; 
         left: 0;
         background-color: var(--white);
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         padding: 1rem 0;
         text-align: center;
-        gap: 0; /* Quitamos el gap horizontal */
+        gap: 0;
     }
 
-    /* Estilo de los items en móvil */
+   
     .Menu-Horizontal li {
         width: 100%;
         padding: 15px 0;
@@ -343,14 +339,14 @@ body {
         border-bottom: none;
     }
 
-    /* 4. CLASE MÁGICA: Esta clase se agrega con JS para mostrar el menú */
+ 
     .Menu-Horizontal.active {
         display: flex;
         animation: slideDown 0.3s ease forwards;
     }
 }
 
-/* Animación suave */
+
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -400,10 +396,10 @@ html {
   background: var(--primary-hover);
 }
 
-/* --- RESPONSIVE PARA MÓVILES --- */
+
 @media (max-width: 768px) {
   .cont-gral-Inicio {
-    flex-direction: column-reverse; /* Imagen arriba, texto abajo en móviles */
+    flex-direction: column-reverse;
     text-align: center;
   }
 
@@ -412,6 +408,7 @@ html {
   }
   
   .Menu-Horizontal {
-    display: none; /* Aquí podrías implementar un menú hamburguesa más adelante */
+    display: none; 
   }
+
 }
