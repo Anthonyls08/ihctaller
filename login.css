@@ -1,49 +1,45 @@
-/* --- CORRECCIÓN 1: EL RESET GLOBAL --- */
-/* Esto es obligatorio. Le dice al navegador que el borde y el relleno
-   se incluyan DENTRO del tamaño total y no se sumen aparte. */
+/* --- RESET BÁSICO (Obligatorio para que no se descuadre) --- */
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fffbf2;
-    /* Evita que aparezca barra de scroll horizontal */
-    overflow-x: hidden; 
+    background-color: #fffbf2; /* Fondo crema */
+    min-height: 100vh; /* Asegura que el fondo cubra todo */
 }
 
-/* --- CORRECCIÓN 2: EL CONTENEDOR --- */
+/* --- EL CONTENEDOR PRINCIPAL (El fondo de toda la pantalla) --- */
 .login-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    /* Quitamos width: 100% explícito para evitar sumas con el padding. 
-       Un div ya ocupa el 100% por defecto. */
-    width: auto; 
-    padding: 20px; /* Margen de seguridad alrededor */
+    justify-content: center; /* Centrado Horizontal */
+    align-items: center;     /* Centrado Vertical */
+    min-height: 100vh;       /* Altura mínima de toda la pantalla */
+    width: 100%;
+    padding: 20px;           /* Margen de seguridad para que no toque los bordes */
 }
 
-/* --- LA CAJA DEL FORMULARIO --- */
+/* --- LA TARJETA (El cuadro blanco) --- */
 .login-box {
     background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 2.5rem;         /* Relleno interno cómodo */
+    border-radius: 20px;     /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave */
     
-    /* Control de anchos */
-    width: 100%; 
-    max-width: 400px; /* En PC no pasará de 400px */
+    /* ESTO ES LO QUE LO CUADRA: */
+    width: 100%;             /* Intenta ocupar todo el ancho disponible... */
+    max-width: 400px;        /* ...pero detente en 400px (tamaño ideal) */
     
     text-align: center;
+    margin: 0 auto;          /* Asegura centrado extra */
 }
 
+/* --- ELEMENTOS INTERNOS (Inputs, botones, etc.) --- */
 .login-logo {
-    width: 70px;
+    width: 80px;
     margin-bottom: 1rem;
-    max-width: 100%; /* Imagen responsive */
 }
 
 .login-box h2 {
@@ -58,7 +54,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* --- CORRECCIÓN 3: LOS INPUTS (El problema principal) --- */
 .input-group {
     margin-bottom: 1rem;
     text-align: left;
@@ -67,23 +62,21 @@ body {
 
 .input-group label {
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
     color: #333;
     font-size: 0.9rem;
 }
 
+/* El arreglo de los inputs que ya funcionó */
 .input-group input {
-    /* Aseguramos que nunca exceda el ancho de su padre */
     width: 100%;
-    max-width: 100%; 
-    
     padding: 12px;
     border: 2px solid #eee;
     border-radius: 8px;
     font-size: 1rem;
     background-color: #fafafa;
-    transition: all 0.3s;
+    transition: border-color 0.3s;
     font-family: inherit;
 }
 
@@ -93,14 +86,12 @@ body {
     outline: none;
 }
 
-/* --- BOTONES Y ENLACES --- */
 .form-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap; /* Si no caben, bajan de línea */
     gap: 10px;
 }
 
@@ -129,6 +120,11 @@ body {
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(255, 127, 17, 0.3);
+    transition: transform 0.2s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
 }
 
 .divider {
@@ -137,39 +133,48 @@ body {
     text-align: center;
 }
 .divider::before {
-    content: "";
-    position: absolute;
-    top: 50%; left: 0; width: 100%; height: 1px;
-    background: #eee; z-index: 1;
+    content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #eee; z-index: 1;
 }
 .divider span {
-    background: white; padding: 0 10px; color: #999;
-    font-size: 0.85rem; position: relative; z-index: 2;
+    background: white; padding: 0 10px; color: #999; font-size: 0.85rem; position: relative; z-index: 2;
 }
 
 .social-login {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 2rem;
+    display: flex; gap: 10px; margin-bottom: 2rem;
 }
-
 .social-btn {
-    flex: 1;
-    padding: 10px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    background: white;
-    font-weight: 600;
-    color: #555;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
+    flex: 1; padding: 10px; border: 2px solid #eee; border-radius: 8px; background: white; font-weight: 600; color: #555; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 
-.register-link {
-    font-size: 0.9rem;
-    color: #666;
-}
+.register-link { font-size: 0.9rem; color: #666; }
 .register-link a { color: #ff7f11; font-weight: 700; text-decoration: none; }
 
-/* --- RESPONSIVE ESPECÍFICO PARA MÓVILES --- */
+/* --- RESPONSIVE (MÓVIL) - CORREGIDO PARA QUE NO SE DESCUADRE --- */
 @media (max-width: 480px) {
+    /* Mantenemos el centrado pero reducimos el espacio lateral */
+    .login-container {
+        padding: 15px; 
+        /* align-items: center; <--- MANTENEMOS ESTO para que esté centrado verticalmente */
+    }
+
+    .login-box {
+        /* Reducimos un poco el relleno interno para que quepa más contenido */
+        padding: 2rem 1.5rem; 
+        
+        /* Aseguramos que no se pegue a los bordes */
+        width: 100%;
+        
+        /* Mantenemos la sombra y borde para que se vea como tarjeta */
+        border-radius: 15px;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
