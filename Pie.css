@@ -1,4 +1,4 @@
-/* Footer general */
+
 .footer {
   background-color: #222; /* Fondo oscuro para contraste */
   color: white;
@@ -6,7 +6,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* Contenedor flexible para 3 columnas */
+
 .footer-container {
   background-color: rgb(212, 211, 211);
   display: flex;
@@ -18,7 +18,7 @@
   gap: 2rem;
 }
 
-/* Marca o logotipo */
+
 .footer-brand {
   flex: 1;
   min-width: 12.5rem;
@@ -30,7 +30,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Enlaces legales */
+
 .footer-links {
   flex: 1;
   min-width: 12.5rem;
@@ -47,7 +47,7 @@
   color: #fff;
 }
 
-/* Redes sociales con íconos */
+
 .footer-social {
   flex: 1;
   min-width: 12.5rem;
@@ -64,7 +64,7 @@
   transform: scale(1.2);
 }
 
-/* Responsive para pantallas pequeñas */
+
 @media (max-width: 48rem) {
   .footer-container {
     flex-direction: column;
@@ -76,3 +76,4 @@
     margin-bottom: 0.5rem;
   }
 }
+
