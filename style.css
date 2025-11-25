@@ -113,6 +113,7 @@ body {
 }
 
 .cont-Inicio-texto h2 {
+  font-family: "Science Gothic";
   font-size: 3rem;
   line-height: 1.2;
   color: var(--text-dark);
@@ -120,6 +121,7 @@ body {
 }
 
 .cont-Inicio-texto p {
+  font-family: "Science Gothic";
   font-size: 1.1rem;
   color: var(--text-light);
   line-height: 1.6;
@@ -412,3 +414,4 @@ html {
   }
 
 }
+
