@@ -288,6 +288,74 @@ body {
   color: var(--text-light);
 }
 
+/* --- ESTILOS DEL BOTÓN HAMBURGUESA (Por defecto oculto en PC) --- */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color); /* Tu naranja */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERY: ESTILOS PARA MÓVIL (Max 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Mostrar el botón de hamburguesa */
+    .menu-toggle {
+        display: flex; 
+    }
+
+    /* 2. Ocultar el título H1 en móvil si quita mucho espacio (Opcional) */
+    .top-header h1 {
+        font-size: 1.2rem; /* Más pequeño */
+    }
+
+    /* 3. Transformar el menú horizontal en vertical y ocultarlo */
+    .Menu-Horizontal {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 5.625rem; /* Justo debajo del header */
+        left: 0;
+        background-color: var(--white);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        text-align: center;
+        gap: 0; /* Quitamos el gap horizontal */
+    }
+
+    /* Estilo de los items en móvil */
+    .Menu-Horizontal li {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .Menu-Horizontal li:last-child {
+        border-bottom: none;
+    }
+
+    /* 4. CLASE MÁGICA: Esta clase se agrega con JS para mostrar el menú */
+    .Menu-Horizontal.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+/* Animación suave */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .contact-form label {
   font-weight: 600;
   margin-bottom: 0.5rem;

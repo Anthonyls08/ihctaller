@@ -10,25 +10,27 @@
 </head>
   <body>
     <nav class="top-header">
-      <a href="" class="logo">
-        <img height ="80" width ="80" src="imagenes/logotico.png" alt=""/>
+    <a href="#inicio" class="logo">
+        <img src="imagenes/logotico.png" alt="Logo QuickBites"/>
     </a>
-      <h1>QuickBites</h1>
-      <ul class="Menu-Horizontal">
+    
+    <h1>QuickBites</h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="Menu-Horizontal">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#recetas">
-          Recetas
-          <ol class="Menu-Vertical">
-            <li><a href="">Frutas y Verduras</a></li>
-            <li><a href="">Granos Integrales</a></li>
-            <li><a href="">Proteinas Magras</a></li>
-            <li><a href="">Lacteos</a></li>
-          </a></ol>
-        </li>
+        <li>
+            <a href="#recetas">Recetas</a>
+            </li>
         <li><a href="#comunidad">Comunidad</a></li>
         <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+    </ul>
+</nav>
 
     <section class="seccion-productos" id="inicio">
     <div class="cont-gral-Inicio">
@@ -182,5 +184,14 @@
         </div>
     </footer>
     </section>
+    <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.Menu-Horizontal');
+
+    mobileMenu.addEventListener('click', () => {
+        // Esto agrega o quita la clase "active" que pusimos en el CSS
+        navList.classList.toggle('active');
+    });
+</script>
   </body>
 </html>
